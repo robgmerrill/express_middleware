@@ -4,13 +4,13 @@ const server = require(__dirname + '/temp-server');
 chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
-var origin = 'localhost:8000';
+var origin = 'localhost:5000';
 var uri = '/post';
 
 describe('rest functionality of the server', () => {
   after(() => server.close());
 
-  it('should respont to a POST request', (done) => {
+  it('should respond to a POST request', (done) => {
     request(origin)
       .post(uri)
       .end((err, res) => {
